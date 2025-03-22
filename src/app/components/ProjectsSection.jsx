@@ -7,57 +7,33 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "Proj name",
-    description: "Project description",
-    image: "/images/placeholder.png",
+    title: "Retro Media Player",
+    description:
+      "A nostalgic web-based media player built with HTML, CSS, and JavaScript, designed with a retro aesthetic and featuring a collection of classic old-school songs.",
+    image: "/images/projects/mediaplayer.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/giselle-ming/media-player",
+    previewUrl: "https://giselle-ming.github.io/media-player/",
   },
   {
     id: 2,
-    title: "Proj name",
-    description: "Project description",
-    image: "/images/placeholder.png",
+    title: "Movie Time App",
+    description:
+      "A React-based movie app that lets users search for movies, view details, and add favorites. Built with SASS for styling and The Movie Database (TMDb) API for fetching movie data.",
+    image: "/images/projects/tmdb.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/giselle-ming/tmdb-project",
+    previewUrl: "https://movietime-tmdb.netlify.app/",
   },
   {
     id: 3,
-    title: "Proj name",
-    description: "Project description",
-    image: "/images/placeholder.png",
+    title: "Gifter App",
+    description:
+      "React application that helps users save and organize gift ideas effortlessly. It features Google Authentication, a MongoDB database for data storage, and a Node.js & Express API for seamless backend functionality.",
+    image: "/images/projects/giftr.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 4,
-    title: "Proj name",
-    description: "Project description",
-    image: "/images/placeholder.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "Proj name",
-    description: "Project description",
-    image: "/images/placeholder.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Proj name",
-    description: "Project description",
-    image: "/images/placeholder.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/giselle-ming/giftr-react",
+    previewUrl: "https://giftr-react.netlify.app/",
   },
 ];
 
@@ -81,8 +57,8 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-[#343660] mt-4 mb-8 md:mb-12">
-        My Projects
+      <h2 className="mt-8 text-center text-4xl font-bold text-[#343660] mt-4 mb-8 md:mb-12">
+        Selected Projects
       </h2>
       {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
@@ -124,6 +100,14 @@ const ProjectsSection = () => {
           </motion.li>
         ))}
       </ul>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          className="mt-10 px-5 py-2.5 w-full sm:w-fit rounded-md mr-4 bg-gradient-to-bl from-[#343660] to-[#BA68C8] hover:scale-102 text-white"
+        >
+          Discover more
+        </button>
+      </div>
     </section>
   );
 };

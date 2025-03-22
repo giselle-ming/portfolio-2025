@@ -8,35 +8,38 @@ import "../globals.css";
 
 const ContactSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage(""); // Clear any previous error messages
+    setEmailSubmitted(false); // Reset the submission state
+
     const data = {
       email: e.target.email.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
+      const resData = await response.json();
 
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
+      if (response.ok && resData.success) {
+        setEmailSubmitted(true); // Show success message
+      } else {
+        throw new Error(resData.error || "Failed to send the message.");
+      }
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      setErrorMessage(error.message || "An unexpected error occurred.");
     }
   };
 
@@ -51,7 +54,6 @@ const ContactSection = () => {
           Let&apos;s Connect
         </h5>
         <p className="text-[#343660] mb-4 max-w-md pt-4">
-          {" "}
           On the hunt for new opportunities! My inbox is always open, whether
           you have a question or just want to say hi, I'll do my best to
           respond!
@@ -75,8 +77,8 @@ const ContactSection = () => {
       </div>
       <div>
         {emailSubmitted ? (
-          <p className="text-[#0c1740] text-sm mt-2">
-            Email sent successfully!
+          <p className="text-[#343660] mb-4 max-w-md pt-4">
+            Email sent successfully! Thank you for reaching out.
           </p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
@@ -92,7 +94,7 @@ const ContactSection = () => {
                 type="email"
                 id="email"
                 required
-                className="bg-[#e6e7fa]  placeholder-[#9CA2A9] text-gray-800 text-sm rounded-lg block w-full p-2.5"
+                className="bg-[#e6e7fa] placeholder-[#9CA2A9] text-gray-800 text-sm rounded-lg block w-full p-2.5"
                 placeholder="name@example.com"
               />
             </div>
@@ -108,7 +110,7 @@ const ContactSection = () => {
                 type="text"
                 id="subject"
                 required
-                className="bg-[#e6e7fa]  placeholder-[#9CA2A9] text-gray-800 text-sm rounded-lg block w-full p-2.5"
+                className="bg-[#e6e7fa] placeholder-[#9CA2A9] text-gray-800 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Just saying hi"
               />
             </div>
@@ -122,7 +124,8 @@ const ContactSection = () => {
               <textarea
                 name="message"
                 id="message"
-                className="bg-[#e6e7fa]  placeholder-[#9CA2A9] text-gray-800 text-sm rounded-lg block w-full p-2.5"
+                required
+                className="bg-[#e6e7fa] placeholder-[#9CA2A9] text-gray-800 text-sm rounded-lg block w-full p-2.5"
                 placeholder="Let's talk about your projects..."
               />
             </div>
@@ -134,6 +137,7 @@ const ContactSection = () => {
             </button>
           </form>
         )}
+        {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
       </div>
     </section>
   );
