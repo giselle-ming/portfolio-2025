@@ -62,7 +62,7 @@ const HeroSection = () => {
               onClick={handleDownload}
               className="relative w-full sm:w-fit inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm text-[#3C3966] rounded-lg group bg-gradient-to-br from-[#343660] to-[#BA68C8] group-hover:from-purple-500 hover:text-white hover:scale-105 dark:text-white focus:outline-none"
             >
-              <span className="relative w-full px-5 py-2.5 transition-all ease-in duration-75 bg-[#d4dbfa] dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+              <span className="relative w-full px-5 py-2.5 transition-all ease-in duration-75 bg-[#d4dbfa] text-[#3C3966] rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent hover:text-white">
                 Download CV
               </span>
             </button>
