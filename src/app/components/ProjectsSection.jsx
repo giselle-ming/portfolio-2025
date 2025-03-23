@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
-import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 
 const projectsData = [
@@ -60,23 +59,6 @@ const ProjectsSection = () => {
       <h2 className="mt-8 text-center text-4xl font-bold text-[#343660] mt-4 mb-8 md:mb-12">
         Selected Projects
       </h2>
-      {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
-      </div> */}
       <ul
         ref={ref}
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
@@ -102,6 +84,7 @@ const ProjectsSection = () => {
       </ul>
       <div className="flex justify-center">
         <button
+          onClick={() => window.location.replace("/projects")}
           type="submit"
           className="mt-10 px-5 py-2.5 w-full sm:w-fit rounded-md mr-4 bg-gradient-to-bl from-[#343660] to-[#BA68C8] hover:scale-102 text-white"
         >

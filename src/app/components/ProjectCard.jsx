@@ -1,6 +1,7 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
@@ -27,7 +28,16 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
         </div>
       </div>
       <div className="text-[#212e63] rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
-        <h5 className="text-xl font-semibold mb-2">{title}</h5>
+        <div className="flex items-center">
+          <h1 className="text-[#BA68C8] font-bold text-2xl">{">"}</h1>
+          <TypeAnimation
+            sequence={[title, 4000]}
+            wrapper="span"
+            className="text-[#212e63] font-bold text-2xl pl-2"
+            speed={10}
+            repeat={1}
+          />
+        </div>
         <p className="text-[#0c1740]">{description}</p>
       </div>
     </div>

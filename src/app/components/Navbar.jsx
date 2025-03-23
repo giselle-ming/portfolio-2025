@@ -5,6 +5,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
 const navLinks = [
   {
+    title: "Home",
+    path: "/",
+  },
+  {
     title: "About",
     path: "#about",
   },
@@ -40,8 +44,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed mx-auto h-15 top-0 left-0 right-0 z-10 bg-[#d4dbfa] bg-opacity-30 backdrop-blur-md">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav className="fixed mx-auto h-20 top-0 left-0 right-0 z-10 bg-[#d4dbfa] bg-opacity-30 backdrop-blur-md">
+      <div className="flex container h-20 lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <div className="text-[#343660] font-bold text-2xl">
           {showName ? <span>Giselle Mingue</span> : null}
         </div>

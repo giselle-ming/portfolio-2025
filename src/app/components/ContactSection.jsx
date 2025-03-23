@@ -32,7 +32,7 @@ const ContactSection = () => {
 
       const resData = await response.json();
 
-      if (response.ok && resData.success) {
+      if (response.ok) {
         setEmailSubmitted(true); // Show success message
       } else {
         throw new Error(resData.error || "Failed to send the message.");
