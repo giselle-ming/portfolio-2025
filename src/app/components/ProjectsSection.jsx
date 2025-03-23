@@ -26,13 +26,13 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "Gifter App",
+    title: "MovieNightFlutter",
     description:
-      "React application that helps users save and organize gift ideas effortlessly. It features Google Authentication, a MongoDB database for data storage, and a Node.js & Express API for seamless backend functionality.",
-    image: "/images/projects/giftr.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/giselle-ming/giftr-react",
-    previewUrl: "https://giftr-react.netlify.app/",
+      "MovieNightFlutter is a Flutter app that lets you swipe through movie recommendations, similar to Tinder, to find your next film to watch. Like or dislike movies to discover new favorites in a fun and interactive way.",
+    image: "/images/projects/movienightflutter.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/giselle-ming/MovieNightFlutter",
+    previewUrl: "https://github.com/giselle-ming/MovieNightFlutter",
   },
 ];
 

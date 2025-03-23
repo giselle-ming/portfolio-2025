@@ -10,11 +10,11 @@ const navLinks = [
   },
   {
     title: "About",
-    path: "#about",
+    path: "/#about",
   },
   {
     title: "Resume",
-    path: "#resume",
+    path: "/resume",
   },
   {
     title: "Projects",
@@ -22,7 +22,7 @@ const navLinks = [
   },
   {
     title: "Contact",
-    path: "#contact",
+    path: "/#contact",
   },
 ];
 
@@ -44,12 +44,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed mx-auto h-20 top-0 left-0 right-0 z-10 bg-[#d4dbfa] bg-opacity-30 backdrop-blur-md">
+    <nav className="fixed mx-auto h-20 top-0 left-0 right-0 z-50 bg-[#d4dbfa] backdrop-blur-md">
       <div className="flex container h-20 lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <div className="text-[#343660] font-bold text-2xl">
           {showName ? <span>Giselle Mingue</span> : null}
         </div>
-        <div className="mobile-menu block md:hidden">
+        <div className="mobile-menu bg-[#d4dbfa] block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}

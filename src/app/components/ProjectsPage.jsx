@@ -75,6 +75,16 @@ const projectsData = [
     gitUrl: "https://github.com/giselle-ming/Doors-Open-Ottawa-App",
     previewUrl: "https://github.com/giselle-ming/Doors-Open-Ottawa-App",
   },
+  {
+    id: 8,
+    title: "MovieNightFlutter",
+    description:
+      "MovieNightFlutter is a Flutter app that lets you swipe through movie recommendations, similar to Tinder, to find your next film to watch. Like or dislike movies to discover new favorites in a fun and interactive way.",
+    image: "/images/projects/movienightflutter.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/giselle-ming/MovieNightFlutter",
+    previewUrl: "https://github.com/giselle-ming/MovieNightFlutter",
+  },
 ];
 
 const ProjectsPage = () => {
