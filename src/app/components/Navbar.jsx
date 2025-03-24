@@ -1,34 +1,47 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import NavLink from "./NavLink";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  HomeIcon,
+  UserIcon,
+  BriefcaseIcon,
+  FolderIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/solid";
 
 const navLinks = [
   {
     title: "Home",
     path: "/",
+    icon: <HomeIcon className="h-5 w-5" />,
   },
   {
     title: "About",
     path: "/#about",
+    icon: <UserIcon className="h-5 w-5" />,
   },
   {
     title: "Resume",
     path: "/resume",
+    icon: <BriefcaseIcon className="h-5 w-5" />,
   },
   {
     title: "Projects",
     path: "/projects",
+    icon: <FolderIcon className="h-5 w-5" />,
   },
   {
     title: "Contact",
     path: "/#contact",
+    icon: <EnvelopeIcon className="h-5 w-5" />,
   },
 ];
 
-const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const [showName, setShowName] = useState(false);
+const Navbar = ({ activeLink, handleLinkClick }) => {
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [showName, setShowName] = React.useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +82,22 @@ const Navbar = () => {
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className={`group flex items-center space-x-2 hover:scale-105 ${
+                  activeLink === link.path
+                    ? "text-[#BA68C8] font-bold"
+                    : "text-[#485073]"
+                }`}
+                onClick={() => handleLinkClick(link.path)}
+              >
+                {React.cloneElement(link.icon, {
+                  className: `h-5 w-5 ${
+                    activeLink === link.path
+                      ? "text-[#BA68C8]"
+                      : "text-[#485073] group-hover:text-[#343660]"
+                  }`,
+                })}
                 <NavLink href={link.path} title={link.title} />
               </li>
             ))}
@@ -80,7 +108,22 @@ const Navbar = () => {
         <div className="mobile-menu bg-[#d4dbfa] bg-opacity-90 absolute top-15 left-0 w-full z-20">
           <ul className="flex flex-col items-center space-y-4 py-4">
             {navLinks.map((link, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className={`group flex items-center space-x-2 ${
+                  activeLink === link.path
+                    ? "text-[#BA68C8] font-bold"
+                    : "text-[#485073]"
+                }`}
+                onClick={() => handleLinkClick(link.path)}
+              >
+                {React.cloneElement(link.icon, {
+                  className: `h-5 w-5 ${
+                    activeLink === link.path
+                      ? "text-[#BA68C8]"
+                      : "text-[#485073] group-hover:text-[#343660]"
+                  }`,
+                })}
                 <NavLink href={link.path} title={link.title} />
               </li>
             ))}

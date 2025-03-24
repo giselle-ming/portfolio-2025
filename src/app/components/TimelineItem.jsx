@@ -29,7 +29,7 @@ export default function TimelineItem({ item, isLeftAligned }) {
           ))}
         </ul>
       </div>
-      <div className="w-6 h-6 sm:w-8 sm:h-8 bg-[#BA68C8] rounded-full absolute sm:left-1/2 sm:transform sm:-translate-x-1/2"></div>
+      <div className="hidden sm:block w-6 h-6 sm:w-8 sm:h-8 bg-[#BA68C8] rounded-full absolute sm:left-1/2 sm:transform sm:-translate-x-1/2"></div>
     </motion.div>
   );
 }

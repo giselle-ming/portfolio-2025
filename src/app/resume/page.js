@@ -1,9 +1,9 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import SkillsSection from "../components/SkillsSection";
 import TimelineSection from "../components/TimelineSection";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 const skillCategories = [
@@ -119,137 +119,6 @@ const education = [
     ],
   },
 ];
-
-// export default function Home() {
-//   return (
-//     <main className="flex min-h-screen flex-col bg-gradient-to-b from-[#d4dbfa] to-[#e8d4fa]">
-//       <Navbar />
-//       <div className="container mt-24 mx-auto px-12 py-4 suppressHydrationWarning">
-//         <motion.h1
-//           className="text-4xl font-bold text-[#343660] mb-8"
-//           initial={{ opacity: 0, y: -50 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8 }}
-//         >
-//           My Resume
-//         </motion.h1>
-
-//         {/* Skills Section */}
-//         <section className="mb-16">
-//           <motion.h2
-//             className="text-3xl font-semibold text-[#343660] mb-6"
-//             initial={{ opacity: 0, y: -50 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8 }}
-//           >
-//             Core Skills
-//           </motion.h2>
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//             {skillCategories.map((category, index) => (
-//               <motion.div
-//                 key={index}
-//                 className="flex flex-col items-center"
-//                 initial={{ opacity: 0, scale: 0.8 }}
-//                 animate={{ opacity: 1, scale: 1 }}
-//                 transition={{ duration: 0.8, delay: index * 0.2 }}
-//               >
-//                 {/* Circular Progress for Category */}
-//                 <div className="w-24 h-24 mb-4">
-//                   <CircularProgressbar
-//                     value={category.level}
-//                     text={`${category.level}%`}
-//                     styles={buildStyles({
-//                       textColor: "#343660",
-//                       pathColor: "#BA68C8",
-//                       trailColor: "#e0e0e0",
-//                     })}
-//                   />
-//                 </div>
-//                 <h3 className="text-lg font-bold text-[#343660] mb-4">
-//                   {category.category}
-//                 </h3>
-//                 {/* List of Skills */}
-//                 <ul className="list-none text-md text-[#485073]">
-//                   {category.skills.map((skill, i) => (
-//                     <li key={i} className="mb-1 flex items-center">
-//                       {/* Replace the src with the path to your logo or use an icon */}
-//                       <img
-//                         src={`/icons/${skill
-//                           .toLowerCase()
-//                           .replace(/ /g, "-")}.png`}
-//                         alt={`${skill} logo`}
-//                         className="w-5 h-5 mr-2"
-//                       />
-//                       {skill}
-//                     </li>
-//                   ))}
-//                 </ul>
-//               </motion.div>
-//             ))}
-//           </div>
-//         </section>
-
-//         {/* Timeline Section */}
-//         <motion.h2
-//           className="text-3xl font-semibold text-[#343660] mb-6"
-//           initial={{ opacity: 0, y: -50 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8 }}
-//         >
-//           Experience
-//         </motion.h2>
-
-//         <div className="relative">
-//           {/* Vertical Line */}
-//           <div className="absolute left-1/2 top-0 w-1 bg-[#BA68C8] h-full transform -translate-x-1/2"></div>
-
-//           {/* Timeline Items */}
-//           {[...experiences, ...education]
-//             .sort(
-//               (a, b) =>
-//                 new Date(b.date.split(" - ")[0]) -
-//                 new Date(a.date.split(" - ")[0])
-//             ) // Sort chronologically
-//             .map((item, index) => (
-//               <motion.div
-//                 key={index}
-//                 className={`flex items-center mb-12 ${
-//                   index % 2 === 0 ? "justify-start" : "justify-end"
-//                 }`}
-//                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-//                 animate={{ opacity: 1, x: 0 }}
-//                 transition={{ duration: 0.8, delay: index * 0.2 }}
-//               >
-//                 <div
-//                   className={`relative w-1/2 ${
-//                     index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
-//                   }`}
-//                 >
-//                   <h3 className="text-xl font-bold text-[#343660]">
-//                     {item.title || item.degree}
-//                   </h3>
-//                   <p className="text-sm text-[#485073]">
-//                     {item.company || item.school}
-//                   </p>
-//                   <p className="text-sm text-[#485073] italic">{item.date}</p>
-//                   <ul className="list-none mt-2 text-[#343660]">
-//                     {item.description.map((desc, i) => (
-//                       <li key={i} className="mb-1">
-//                         {desc}
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//                 {/* Dot */}
-//                 <div className="w-8 h-8 bg-[#BA68C8] rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
-//               </motion.div>
-//             ))}
-//         </div>
-//       </div>
-//     </main>
-//   );
-// }
-
 export default function Home() {
   // Combine experiences and education into a single timeline array
   const timelineItems = [...experiences, ...education].sort(
@@ -257,9 +126,15 @@ export default function Home() {
       new Date(b.date.split(" - ")[0]) - new Date(a.date.split(" - ")[0])
   );
 
+  const [activeLink, setActiveLink] = useState("/resume");
+
+  const handleLinkClick = (path) => {
+    setActiveLink(path);
+  };
+
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-b from-[#d4dbfa] to-[#e8d4fa]">
-      <Navbar />
+      <Navbar activeLink={activeLink} handleLinkClick={handleLinkClick} />
       <div className="container mt-24 mx-auto px-12 py-4 suppressHydrationWarning">
         <motion.h1
           className="text-4xl font-bold text-[#343660] mb-8"
