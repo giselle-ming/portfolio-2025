@@ -59,14 +59,14 @@ const ContactSection = () => {
           respond!
         </p>
         <div className="socials flex flex-row gap-2 ">
-          <Link href="github.com">
+          <Link href="https://github.com/giselle-ming">
             <Image
               src={GithubIcon}
               className="contact-icon"
               alt="Github Icon"
             />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="https://www.linkedin.com/in/giselleminguerios/">
             <Image
               src={LinkedinIcon}
               className="contact-icon"
