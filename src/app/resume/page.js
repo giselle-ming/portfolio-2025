@@ -66,7 +66,7 @@ const experiences = [
   {
     title: "Research/Analysis Officer – Casual Contract",
     company: "Transport Canada",
-    date: "Sep 2024 – Current",
+    date: "Sep 2024 – Mar 2025",
     description: [
       "Collaborated in the development of internal reporting software, contributing to the design and implementation of features for improved reporting and analytics.",
       "Created automated test cases that validate software and product requirements.",
