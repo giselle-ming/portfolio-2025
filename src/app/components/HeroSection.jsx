@@ -54,17 +54,15 @@ const HeroSection = () => {
           <div>
             <a
               href="mailto:giselle@berraming.com?subject=I%20want%20to%20hire%20you!"
-              className="px-5 py-2.5 w-full mb-2 sm:w-fit rounded-md mr-4 bg-gradient-to-br from-[#343660] to-[#BA68C8] text-white inline-block transition-transform transform hover:scale-105"
+              className="px-5 py-2.5 w-full mb-2 sm:w-fit rounded-md mr-4 bg-gradient-to-br from-[#343660] to-[#BA68C8] text-white inline-block transition-transform transform hover:scale-105 cursor-default"
             >
               Hire me
             </a>
             <button
               onClick={handleDownload}
-              className="relative w-full sm:w-fit inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm text-[#3C3966] rounded-lg group bg-gradient-to-br from-[#343660] to-[#BA68C8] group-hover:from-purple-500 hover:text-white hover:scale-105 dark:text-white focus:outline-none"
+              className="mt-2 px-5 py-2.5 w-full sm:w-fit rounded-md mr-4 bg-gradient-to-bl from-[#343660] to-[#BA68C8] hover:scale-102 text-white"
             >
-              <span className="relative w-full px-5 py-2.5 transition-all ease-in duration-75 bg-[#d4dbfa] text-[#3C3966] rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent hover:text-white">
-                Download CV
-              </span>
+              Download CV
             </button>
           </div>
         </div>
