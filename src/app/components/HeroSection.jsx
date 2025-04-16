@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-12 h-[60vh]">
+      <div className="container mt-24 mx-auto px-12 py-16 grid grid-cols-1 lg:grid-cols-12 h-[60vh]">
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className="text-white mb-4 text-4xl sm:text5xl lg:text-6xl font-extrabold">
             <span className="text-transparent bg-gradient-to-br from-[#343660] to-[#BA68C8] bg-clip-text">

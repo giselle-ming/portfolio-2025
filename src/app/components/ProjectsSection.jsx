@@ -55,41 +55,43 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects">
-      <h2 className="mt-8 text-center text-4xl font-bold text-[#343660] mt-4 mb-8 md:mb-12">
-        Selected Projects
-      </h2>
-      <ul
-        ref={ref}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
-      >
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
-      </ul>
-      <div className="flex justify-center">
-        <button
-          onClick={() => window.location.replace("/projects")}
-          type="submit"
-          className="mt-10 px-5 py-2.5 w-full sm:w-fit rounded-md mr-4 bg-gradient-to-bl from-[#343660] to-[#BA68C8] hover:scale-102 text-white"
+    <section className="bg-[#bdc8f9]" id="projects">
+      <div className="container pb-12 mx-auto px-12 py-12">
+        <h2 className="mt-8 text-center text-4xl font-bold text-[#343660] mt-4 mb-8 md:mb-12">
+          Selected Projects
+        </h2>
+        <ul
+          ref={ref}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
         >
-          Discover more
-        </button>
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </motion.li>
+          ))}
+        </ul>
+        <div className="flex justify-center">
+          <button
+            onClick={() => window.location.replace("/projects")}
+            type="submit"
+            className="mt-10 px-5 py-2.5 w-full sm:w-fit rounded-md mr-4 bg-gradient-to-bl from-[#343660] to-[#BA68C8] hover:scale-102 text-white"
+          >
+            Discover more
+          </button>
+        </div>
       </div>
     </section>
   );
