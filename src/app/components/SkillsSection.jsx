@@ -3,10 +3,10 @@ import SkillCategory from "./SkillCategory";
 
 export default function SkillsSection({ skillCategories }) {
   return (
-    <section className="mb-16">
+    <section className="mb-[-4rem] md:mb-[-2rem] sm:mb-[-2rem] lg:mb-[-2rem]">
       {/* Animated Section Title */}
       <motion.h2
-        className="text-3xl font-semibold text-[#343660] mb-6 text-center"
+        className="text-3xl font-semibold text-[#343660] text-center mb-[-6rem] md:mb-[-2rem] sm:mb-[-2rem] lg:mb-[-2rem] mt-8"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

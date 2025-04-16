@@ -8,7 +8,10 @@ const AboutSection = () => {
   const ref = useRef(null);
 
   return (
-    <section className="text-white mx-auto px-12 bg-[#d1d3ff]" id="about">
+    <section
+      className="text-white mx-auto px-12 bg-[#d1d3ff] scroll-mt-16"
+      id="about"
+    >
       <div className="rounded-full md:grid md:grid-cols-1 lg:grid-cols-2 gap-8 items-center py-16 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           className="hidden lg:block"

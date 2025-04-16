@@ -56,6 +56,17 @@ const Navbar = ({ activeLink, handleLinkClick }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 730) {
+        setNavbarOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <nav className="fixed mx-auto h-20 top-0 left-0 right-0 z-50 bg-[#d4dbfa] backdrop-blur-md">
       <div className="flex container h-20 lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
@@ -91,14 +102,7 @@ const Navbar = ({ activeLink, handleLinkClick }) => {
                 }`}
                 onClick={() => handleLinkClick(link.path)}
               >
-                {React.cloneElement(link.icon, {
-                  className: `h-5 w-5 ${
-                    activeLink === link.path
-                      ? "text-[#BA68C8]"
-                      : "text-[#485073] group-hover:text-[#343660]"
-                  }`,
-                })}
-                <NavLink href={link.path} title={link.title} />
+                <NavLink href={link.path} title={link.title} icon={link.icon} />
               </li>
             ))}
           </ul>
@@ -117,14 +121,7 @@ const Navbar = ({ activeLink, handleLinkClick }) => {
                 }`}
                 onClick={() => handleLinkClick(link.path)}
               >
-                {React.cloneElement(link.icon, {
-                  className: `h-5 w-5 ${
-                    activeLink === link.path
-                      ? "text-[#BA68C8]"
-                      : "text-[#485073] group-hover:text-[#343660]"
-                  }`,
-                })}
-                <NavLink href={link.path} title={link.title} />
+                <NavLink href={link.path} title={link.title} icon={link.icon} />
               </li>
             ))}
           </ul>
