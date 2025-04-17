@@ -85,6 +85,16 @@ const projectsData = [
     gitUrl: "https://github.com/giselle-ming/MovieNightFlutter",
     previewUrl: "https://github.com/giselle-ming/MovieNightFlutter",
   },
+  {
+    id: 9,
+    title: "Invoice Reader",
+    description:
+      "Web-based application that allows users to upload invoices or receipts and extract key information such as vendor details, invoice number, date, total amount, and line items. The application uses OCR (Optical Character Recognition) to process the uploaded files and display the extracted data in a user-friendly format.",
+    image: "/images/projects/invoicereader.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/giselle-ming/auto-invoice",
+    previewUrl: "giselle-ming.github.io/auto-invoice/",
+  },
 ];
 
 const ProjectsPage = () => {
