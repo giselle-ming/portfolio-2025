@@ -23,33 +23,34 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-[#343660] mb-4">About Me</h2>
           <p className="text-base lg:text-lg text-[#343660]">
-            I'm a passionate software engineer based in Toronto. I graduated
-            with honors in Mobile Application Design and Development from
-            Algonquin College in Ottawa, where I focused on hybrid and native
-            mobile app development, full-stack web development, and UX/UI
+            Graduated with honors in Mobile Application Design and Development
+            from Algonquin College in Ottawa, with a strong focus on hybrid and
+            native mobile app development, full-stack web development, and UX/UI
             design. I also hold a Bachelor of Engineering in Software
             Engineering from Universidad Católica Andrés Bello (UCAB) in
-            Caracas, Venezuela. Additionally, I've worked as an auditor and
-            research analyst.
+            Caracas, Venezuela. For nearly two years, I worked as a Research
+            Analyst at Transport Canada, contributing to digital solutions and
+            process improvements. I also have experience as an auditor, which
+            helped me build strong analytical and problem-solving skills.
           </p>
           <div className="mt-4"></div>
           <div className="flex flex-wrap gap-2">
-            <span className="px-4 py-2 bg-[#8C58AB] text-[#e0e7ff] rounded-md text-sm font-medium">
+            <span className="px-4 py-2 bg-[#C580D0] text-[#e0e7ff] rounded-md text-sm font-medium">
               Web Developer
             </span>
-            <span className="px-4 py-2 bg-[#8C58AB] text-[#e0e7ff] rounded-md text-sm font-medium">
+            <span className="px-4 py-2 bg-[#C580D0] text-[#e0e7ff] rounded-md text-sm font-medium">
               Web Design
             </span>
-            <span className="px-4 py-2 bg-[#8C58AB] text-[#e0e7ff] rounded-md text-sm font-medium">
+            <span className="px-4 py-2 bg-[#C580D0] text-[#e0e7ff] rounded-md text-sm font-medium">
               Software Engineer
             </span>
-            <span className="px-4 py-2 bg-[#8C58AB] text-[#e0e7ff] rounded-md text-sm font-medium">
+            <span className="px-4 py-2 bg-[#C580D0] text-[#e0e7ff] rounded-md text-sm font-medium">
               Mobile Development
             </span>
-            <span className="px-4 py-2 bg-[#8C58AB] text-[#e0e7ff] rounded-md text-sm font-medium">
+            <span className="px-4 py-2 bg-[#C580D0] text-[#e0e7ff] rounded-md text-sm font-medium">
               Full-Stack Developer
             </span>
-            <span className="px-4 py-2 bg-[#8C58AB] text-[#e0e7ff] rounded-md text-sm font-medium">
+            <span className="px-4 py-2 bg-[#C580D0] text-[#e0e7ff] rounded-md text-sm font-medium">
               UI/UX Design
             </span>
           </div>
